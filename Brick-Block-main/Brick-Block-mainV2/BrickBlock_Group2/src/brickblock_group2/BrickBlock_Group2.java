@@ -33,6 +33,8 @@ public static String personEmail = "";
 public static String personOccupation = "";
 public static double personPhoneNumber = 0; 
 public static double total;
+public static double bricksNeeded = 0;
+public static double priceOfProject = 0; 
 
 // Main Method
     public static void main(String[] args) 
@@ -129,8 +131,9 @@ while (!menu.equals("4. Quit")) {
     private static void project() {
         DecimalFormat df2 = new DecimalFormat( "#,###,###,##0.00" );
         total = FTCCSURFACEAREA + FTCCADDADENTIONS + FTCCADDCORNERS - FTCCSUBTRACTWINDOWFRAMES - FTCCSUBTRACTCOMPUTERFRONTFRAME - FTCCSUBTRACTDOORS;
-        double bricks = total/modularBrick;
-        JOptionPane.showMessageDialog(null,df2.format(bricks));
+        bricksNeeded = total/modularBrick;
+        JOptionPane.showMessageDialog(null,df2.format(bricksNeeded));
+        JOptionPane.showMessageDialog(null,priceOfProject = bricksNeeded * .50);
     }
 
     //extra, uses user input to calcualte the bricks in a given area
@@ -217,21 +220,44 @@ while (!menu.equals("4. Quit")) {
     {
          try (FileWriter myOutPutFile = new FileWriter(personEmail + ".txt")) {
              myOutPutFile.write(personName  + "\n");
-             
-             
-            
+              myOutPutFile.write("Bricks Needed: " + bricksNeeded + "\n");
+              myOutPutFile.write("Total Price for your Job is:" + priceOfProject );
+              myOutPutFile.write("Thank you for Using Our System!");
+              
          }
-        System.out.println("You did it");
+        JOptionPane.showMessageDialog(null, "Your information has been saved "
+        + "to a file");
     }
      catch (IOException e)
      {
-      System.out.print("An error occured");
+       JOptionPane.showMessageDialog(null, "An error occured");
      }
     }
+             
+
 
     private static void Receipt() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try
+    {
+         try (FileWriter myOutPutFile = new FileWriter(personEmail + ".txt")) {
+             myOutPutFile.write(personName  + "\n");
+              myOutPutFile.write("Bricks Needed: " + bricksNeeded + "\n");
+              myOutPutFile.write("Total Price for your Job is:" + priceOfProject + "\n" );
+              myOutPutFile.write("Thank you for Using Our System!");
+              
+         }
+        JOptionPane.showMessageDialog(null, "Your information has been saved "
+        + "to a file");
     }
-}
+     catch (IOException e)
+     {
+       JOptionPane.showMessageDialog(null, "An error occured");
+     }
+    }
+             
+
+    }
+
 
 
