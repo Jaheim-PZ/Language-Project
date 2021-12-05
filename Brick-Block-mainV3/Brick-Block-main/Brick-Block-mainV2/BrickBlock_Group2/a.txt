@@ -1,0 +1,10 @@
+Name: a
+Occupation: a
+Email Address: a
+You need 78,954.05 Bricks to complete the project
+It costs $500, for a bundle of 1,000 bricks 
+That gives you 78.95 Bundles of Bricks 
+You will also need 2,193.17 Bags of PreMixed Cement 
+Which will cost $15,900.47 
+Meaning the Total Price for your Job is around: $55,377.49 dollars.
+Thank you so much for Using Our System!
